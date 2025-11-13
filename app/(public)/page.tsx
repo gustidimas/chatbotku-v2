@@ -33,7 +33,9 @@ export default function Home() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             className="order-1 md:order-2 flex flex-col gap-2 justify-center items-center text-center md:justify-center md:items-end md:text-end relative z-10"
           >
-            <h1 className="text-5xl md:text-6xl font-bold font-serif">Serahkan ke AI</h1>
+            <h1 className="text-5xl md:text-6xl font-bold font-serif">
+              Serahkan ke AI
+            </h1>
             <p className="text-base md:text-lg">
               Bangun chatbot pintar untuk bisnismu.
             </p>
@@ -44,7 +46,16 @@ export default function Home() {
           </motion.div>
           <div className="absolute inset-0 bg-background z-0"></div>
         </section>
-        <section className="min-h-[480px] grid grid-cols-1 md:grid-cols-2 px-4 md:px-8 py-16 md:py-8 bg-primary text-secondary"></section>
+        <section className="min-h-[480px] flex flex-col justify-center items-center px-4 md:px-8 py-16 md:py-8 bg-primary text-secondary">
+          <h2 className="text-3xl md:text-4xl font-bold font-serif">
+            Fitur Terbaik
+          </h2>
+          <div className="flex flex-wrap flex-row justify-center items-center gap-2">
+            <div className="bg-red-500 w-52 h-52"></div>
+            <div className="bg-red-500 w-52 h-52"></div>
+            <div className="bg-red-500 w-52 h-52"></div>
+          </div>
+        </section>
       </div>
     </>
   );
