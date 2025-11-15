@@ -4,6 +4,13 @@ import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/nextjs";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -36,21 +43,21 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => (window.location.href = "/signin")}
-            className="text-sm"
-          >
-            Masuk
-          </Button>
-          <Button
-            size="sm"
-            onClick={() => (window.location.href = "/signup")}
-            className="text-sm"
-          >
-            Daftar
-          </Button>
+          <SignedOut>
+            <SignInButton>
+              <Button size={"sm"} variant={"outline"}>
+                Masuk
+              </Button>
+            </SignInButton>
+            <SignUpButton>
+              <Button size={"sm"}>Daftar</Button>
+            </SignUpButton>
+          </SignedOut>
+          <SignedIn>
+            <Button size={"sm"} asChild>
+              <Link href={"/dashboard"}>Dashboard</Link>
+            </Button>
+          </SignedIn>
         </nav>
 
         <button
